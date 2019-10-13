@@ -1,3 +1,5 @@
+package me.grigor;
+
 import java.util.concurrent.atomic.AtomicLong;
 
 public class ConcurrentCounter implements Counter {

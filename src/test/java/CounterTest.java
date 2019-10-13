@@ -1,3 +1,5 @@
+import me.grigor.Counter;
+import me.grigor.MagicCounter;
 import org.junit.Test;
 
 import java.util.List;
@@ -8,7 +10,6 @@ import java.util.concurrent.Future;
 
 import static java.util.stream.Collectors.toList;
 import static java.util.stream.IntStream.range;
-import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 
 public class CounterTest {
