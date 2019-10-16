@@ -1,5 +1,4 @@
-import me.grigor.Counter;
-import me.grigor.MagicCounter;
+import me.grigor.*;
 import org.junit.Test;
 
 import java.util.List;
@@ -17,7 +16,7 @@ public class CounterTest {
 
     @Test
     public void testSequentialExecution() throws ExecutionException, InterruptedException {
-        ExecutorService executors = Executors.newFixedThreadPool(10);
+        ExecutorService executors = Executors.newFixedThreadPool(20);
 
         int incrementCallsCount = 1_000_000;
 

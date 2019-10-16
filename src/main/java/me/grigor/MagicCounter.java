@@ -4,8 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MagicCounter implements Counter {
-
-    private Map<Long, Long> map = new HashMap<>();
+    private final Map<Long, Long> map = new HashMap<>();
 
     @Override
     public void increment() {
@@ -20,8 +19,9 @@ public class MagicCounter implements Counter {
 
     @Override
     public long getValue() {
+        final Map<Long, Long> mapForCount = new HashMap<>(map);
         long quantity = 0;
-        for (Map.Entry<Long, Long> pair : map.entrySet()) {
+        for (Map.Entry<Long, Long> pair : mapForCount.entrySet()) {
             quantity += pair.getValue();
         }
         return quantity;
