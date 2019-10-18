@@ -12,7 +12,7 @@ import static java.util.stream.IntStream.range;
 import static org.junit.Assert.assertEquals;
 
 public class CounterTest {
-    private static final Counter counter = new MagicCounter();
+    private static final Counter counter = new MutexCounter();
 
     @Test
     public void testSequentialExecution() throws ExecutionException, InterruptedException {

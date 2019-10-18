@@ -16,11 +16,26 @@ import java.util.concurrent.TimeUnit;
 @State(Scope.Benchmark)
 public class ForBenchmark {
 
+    private Counter mutexCounter = new MutexCounter();
     private Counter concurrentCounter = new ConcurrentCounter();
     private Counter lockCounter = new LockCounter();
-    private Counter mutexCounter = new MutexCounter();
     private Counter magicCounter = new MagicCounter();
+
     private static final int n = 2;
+
+    @Benchmark
+    @Group("MutexCounter")
+    @GroupThreads(n)
+    public void checkMutexIncrement() {
+        mutexCounter.increment();
+    }
+
+    @Benchmark
+    @Group("MutexCounter")
+    @GroupThreads(n)
+    public long checkMutexGet() {
+        return mutexCounter.getValue();
+    }
 
     @Benchmark
     @Group("ConcurrentCounter")
@@ -48,20 +63,6 @@ public class ForBenchmark {
     @GroupThreads(n)
     public long checkLockGet() {
         return lockCounter.getValue();
-    }
-
-    @Benchmark
-    @Group("MutexCounter")
-    @GroupThreads(n)
-    public void checkMutexIncrement() {
-        mutexCounter.increment();
-    }
-
-    @Benchmark
-    @Group("MutexCounter")
-    @GroupThreads(n)
-    public long checkMutexGet() {
-        return mutexCounter.getValue();
     }
 
     @Benchmark

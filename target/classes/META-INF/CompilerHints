@@ -3,5 +3,11 @@ dontinline,*.*_avgt_jmhStub
 dontinline,*.*_sample_jmhStub
 dontinline,*.*_ss_jmhStub
 dontinline,*.*_thrpt_jmhStub
+inline,me/grigor/benchmark/ForBenchmark.checkConcurrentGet
+inline,me/grigor/benchmark/ForBenchmark.checkConcurrentIncrement
+inline,me/grigor/benchmark/ForBenchmark.checkLockGet
+inline,me/grigor/benchmark/ForBenchmark.checkLockIncrement
+inline,me/grigor/benchmark/ForBenchmark.checkMagicGet
+inline,me/grigor/benchmark/ForBenchmark.checkMagicIncrement
 inline,me/grigor/benchmark/ForBenchmark.checkMutexGet
 inline,me/grigor/benchmark/ForBenchmark.checkMutexIncrement
